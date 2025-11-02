@@ -9,6 +9,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\jordan\\source\\repos\\strudel_reactor\\src\\components\\controls.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\controls.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\jordan\\source\\repos\\strudel_reactor\\src\\components\\playbutton.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\playbutton.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\jordan\\source\\repos\\strudel_reactor\\src\\components\\preprocessbutton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\preprocessbutton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\jordan\\source\\repos\\strudel_reactor\\src\\components\\procbutton.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\procbutton.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +30,64 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PreprocessButton.jsx",
+              "DocumentMoniker": "C:\\Users\\Jordan\\source\\repos\\strudel_reactor\\src\\components\\PreprocessButton.jsx",
+              "RelativeDocumentMoniker": "src\\components\\PreprocessButton.jsx",
+              "ToolTip": "C:\\Users\\Jordan\\source\\repos\\strudel_reactor\\src\\components\\PreprocessButton.jsx",
+              "RelativeToolTip": "src\\components\\PreprocessButton.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-02T17:57:49.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProcButton.js",
+              "DocumentMoniker": "C:\\Users\\Jordan\\Source\\Repos\\strudel_reactor\\src\\components\\ProcButton.js",
+              "RelativeDocumentMoniker": "src\\components\\ProcButton.js",
+              "ToolTip": "C:\\Users\\Jordan\\Source\\Repos\\strudel_reactor\\src\\components\\ProcButton.js",
+              "RelativeToolTip": "src\\components\\ProcButton.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-02T17:51:43.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayButton.js",
+              "DocumentMoniker": "C:\\Users\\Jordan\\Source\\Repos\\strudel_reactor\\src\\components\\PlayButton.js",
+              "RelativeDocumentMoniker": "src\\components\\PlayButton.js",
+              "ToolTip": "C:\\Users\\Jordan\\Source\\Repos\\strudel_reactor\\src\\components\\PlayButton.js",
+              "RelativeToolTip": "src\\components\\PlayButton.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-02T17:45:47.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Controls.js",
-              "DocumentMoniker": "C:\\Users\\Jordan\\Source\\Repos\\strudel_reactor\\src\\components\\Controls.js",
+              "DocumentMoniker": "C:\\Users\\Jordan\\source\\repos\\strudel_reactor\\src\\components\\Controls.js",
               "RelativeDocumentMoniker": "src\\components\\Controls.js",
-              "ToolTip": "C:\\Users\\Jordan\\Source\\Repos\\strudel_reactor\\src\\components\\Controls.js",
+              "ToolTip": "C:\\Users\\Jordan\\source\\repos\\strudel_reactor\\src\\components\\Controls.js",
               "RelativeToolTip": "src\\components\\Controls.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-02T17:25:27.78Z",
               "EditorCaption": ""
@@ -41,18 +100,10 @@
               "RelativeDocumentMoniker": "src\\App.js",
               "ToolTip": "C:\\Users\\Jordan\\source\\repos\\strudel_reactor\\src\\App.js",
               "RelativeToolTip": "src\\App.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwAoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-02T17:20:32.071Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         },
