@@ -1,4 +1,6 @@
-function Controls() {
+
+function Controls({ volume, onVolumeChange }) {
+    
     return (
     <>
         <div className="input-group mb-3">
@@ -6,8 +8,8 @@ function Controls() {
             <input type="text" className="form-control" id="cpm_text_input" placeholder="120" aria-describedby="cpm_label" />
         </div>
 
-        <label htmlFor="volume_range" className="form-label">Volume</label>
-        <input type="range" className="form-range" min="0" max="1" step="0.01" id="volume_range" />
+            <label htmlFor="volume_range" className="form-label">Volume: {volume}</label>
+            <input type="range" className="form-range" min="0" max="1" step="0.01" id="volume_range" onChange={onVolumeChange} value={volume} />
 
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="s1" />

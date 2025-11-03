@@ -7,7 +7,7 @@ import { initAudioOnFirstClick } from '@strudel/webaudio';
 import { transpiler } from '@strudel/transpiler';
 import { getAudioContext, webaudioOutput, registerSynthSounds } from '@strudel/webaudio';
 import { registerSoundfonts } from '@strudel/soundfonts';
-import { stranger_tune } from './tunes';
+import { stranger_tune } from './tunes/tunes';
 import console_monkey_patch, { getD3Data } from './console-monkey-patch';
 import Controls from './components/Controls';
 import PlayButton from './components/PlayButton';
@@ -22,18 +22,31 @@ const handleD3Data = (event) => {
 
 export default function StrudelDemo() {
 
+    const [volume, setVolume] = useState(.75);
+    const [songText, setSongText] = useState(stranger_tune)
     const hasRun = useRef(false);
 
+    //Play button to resume music
     const handlePlay = () => {
         globalEditor.evaluate()
     }
 
+    //Stop button to stop music
     const handleStop = () => {
         globalEditor.stop()
     }
 
-    const [songText, setSongText] = useState(stranger_tune)
+    //Changes volume
+    const handleVolumeChange = (e) => {
+        const volumeChange = parseFloat(e.target.value);
+        setVolume(volumeChange);
 
+        const gainNode = webaudioOutput?.gainNode;
+        if (gainNode) {
+            gainNode.gain.value = volumeChange;
+        }
+    };
+    
 useEffect(() => {
 
     if (!hasRun.current) {
@@ -77,7 +90,7 @@ useEffect(() => {
 
 return (
     <div>
-        <h2>Strudel Demo</h2>
+        <h2 className="text-center" bg-light>Strudel Mixer</h2>
         <main>
 
             <div className="container-fluid">
@@ -86,12 +99,10 @@ return (
                         <PreprocessButton defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
                     </div>
                     <div className="col-md-4">
-
                         <nav>
                             <ProcButton/>
                             <br />
                             <PlayButton onPlay={handlePlay} onStop={handleStop} />
-
                         </nav>
                     </div>
                 </div>
@@ -101,7 +112,7 @@ return (
                         <div id="output" />
                     </div>
                     <div className="col-md-4">
-                        <Controls/>
+                        <Controls volume={volume} onVolumeChange={handleVolumeChange} />
                     </div>
                 </div>
             </div>
