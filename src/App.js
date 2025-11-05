@@ -24,6 +24,7 @@ export default function StrudelDemo() {
 
     const [volume, setVolume] = useState(.75);
     const [songText, setSongText] = useState(stranger_tune)
+    const [CPM, setCPM] = useState(35);
     const hasRun = useRef(false);
 
     //Play button to resume music
@@ -36,7 +37,7 @@ export default function StrudelDemo() {
         globalEditor.stop()
     }
 
-    //Reads volume from slider then sets the volume. Then appends line for volume change and reevaluates code. 
+    //Reads volume from slider then sets the volume and SongText and resumes playing.
     const handleVolumeChange = (e) => {
         const volumeChange = parseFloat(e.target.value);
         setVolume(volumeChange);
@@ -45,9 +46,19 @@ export default function StrudelDemo() {
         setSongText(newSound);
         globalEditor.setCode(newSound);
         handlePlay();
-        
-    };
-    
+    }
+
+    //Sets CPM to value from the textbox.
+    const handleCPMChange = (e) => {
+        const CPMChange = parseFloat(e.target.value);
+        setCPM(CPMChange);
+
+        let newCPM = songText + `\nsetcpm(${CPMChange})`
+        setSongText(newCPM);
+        globalEditor.setCode(newCPM);
+        handlePlay();
+    }
+
 useEffect(() => {
 
     if (!hasRun.current) {
@@ -112,7 +123,7 @@ return (
                         <div id="output" />
                     </div>
                     <div className="col-md-4">
-                        <Controls volume={volume} onVolumeChange={handleVolumeChange} />
+                        <Controls volume={volume} onVolumeChange={handleVolumeChange} onCPMChange={handleCPMChange} CPM={CPM} />
                     </div>
                 </div>
             </div>

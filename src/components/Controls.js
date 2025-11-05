@@ -1,11 +1,14 @@
 
-function Controls({ volume, onVolumeChange }) {
+function Controls({ volume, CPM, onVolumeChange, onCPMChange }) {
     
     return (
     <>
         <div className="input-group mb-3">
-            <span className="input-group-text" id="cpm_label">setCPM</span>
-            <input type="text" className="form-control" id="cpm_text_input" placeholder="120" aria-describedby="cpm_label" />
+                <span className="input-group-text" id="cpm_label">setCPM</span>
+                <form>
+                    <input type="text" className="form-control" id="cpm_text_input" placeholder="CPM..." aria-describedby="cpm_label" onChange={onCPMChange} value={CPM} />
+                </form>
+                
         </div>
 
             <label htmlFor="volume_range" className="form-label">Volume: {volume}</label>
