@@ -10,20 +10,19 @@ function Controls({ volume, CPM, onVolumeChange, onCPMChange }) {
                 </form>
                 
         </div>
-
             <label htmlFor="volume_range" className="form-label">Volume: {volume}</label>
             <input type="range" className="form-range" min="0" max="1" step="0.01" id="volume_range" onChange={onVolumeChange} value={volume} />
 
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="s1" />
                 <label className="form-check-label" htmlFor="s1">
-                    Default checkbox
+                    Toggle drums
                 </label>
             </div>
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="d1" />
                 <label className="form-check-label" htmlFor="d1">
-                    Checked checkbox
+                    Toggle Reverb
                 </label>
             </div>
             <div className="form-check">

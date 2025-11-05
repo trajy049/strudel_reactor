@@ -13,6 +13,7 @@ import Controls from './components/Controls';
 import PlayButton from './components/PlayButton';
 import ProcButton from './components/ProcButton';
 import PreprocessButton from './components/PreprocessButton';
+import JSONSettings from './components/JSONSettings';
 
 let globalEditor = null;
 
@@ -115,6 +116,8 @@ return (
                             <br />
                             <PlayButton onPlay={handlePlay} onStop={handleStop} />
                         </nav>
+                        <br/>
+                        <JSONSettings />
                     </div>
                 </div>
                 <div className="row">
@@ -123,7 +126,7 @@ return (
                         <div id="output" />
                     </div>
                     <div className="col-md-4">
-                        <Controls volume={volume} onVolumeChange={handleVolumeChange} onCPMChange={handleCPMChange} CPM={CPM} />
+                        <Controls volume={volume} onVolumeChange={handleVolumeChange} onCPMChange={handleCPMChange} CPM={CPM} />  
                     </div>
                 </div>
             </div>
