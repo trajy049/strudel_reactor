@@ -36,15 +36,16 @@ export default function StrudelDemo() {
         globalEditor.stop()
     }
 
-    //Changes volume
+    //Reads volume from slider then sets the volume. Then appends line for volume change and reevaluates code. 
     const handleVolumeChange = (e) => {
         const volumeChange = parseFloat(e.target.value);
         setVolume(volumeChange);
 
-        const gainNode = webaudioOutput?.gainNode;
-        if (gainNode) {
-            gainNode.gain.value = volumeChange;
-        }
+        let newSound = songText + `\nall(x => x.gain(${volumeChange}))`
+        setSongText(newSound);
+        globalEditor.setCode(newSound);
+        handlePlay();
+        
     };
     
 useEffect(() => {
@@ -81,8 +82,7 @@ useEffect(() => {
             });
             
         document.getElementById('proc').value = stranger_tune
-        //SetupButtons()
-        //Proc()
+   
     }
     globalEditor.setCode(songText);
 }, [songText]);
