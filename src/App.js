@@ -82,6 +82,30 @@ export default function StrudelDemo() {
         handlePlay();
     }
 
+    //Saves current settings using JSON and localstorage
+    const handleSaveSettings = () => {
+        const settings = { volume, reverb, CPM, songText };
+        localStorage.setItem("saveSettings", JSON.stringify(settings));
+    }
+
+    //Loads settings that were saved into localstorage
+    const handleLoadSettings = () => {
+        const stored = localStorage.getItem("saveSettings");
+        //Error handling if nothing has been saved
+        if (!stored) {
+            return alert("No settings are saved!");
+        }
+
+        const settings = JSON.parse(stored);
+
+        //Sets settings to values found in localstorage and plays the music
+        setVolume(settings.volume);
+        setReverb(settings.reverb);
+        setCPM(settings.CPM);
+        setSongText(settings.songText);
+        globalEditor.setCode(settings.songText)
+        handlePlay();
+    }
 useEffect(() => {
 
     if (!hasRun.current) {
@@ -140,8 +164,8 @@ return (
                             <PlayButton onPlay={handlePlay}
                                         onStop={handleStop} />
                         </nav>
-                        <br/>
-                        <JSONSettings />
+                        <br />
+                        <JSONSettings onSave={handleSaveSettings} onLoad={handleLoadSettings} />
                     </div>
                 </div>
                 <div className="row">
