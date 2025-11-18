@@ -1,5 +1,5 @@
 
-function Controls({ volume, CPM, onVolumeChange, onCPMChange }) {
+function Controls({ volume, reverb, CPM, onVolumeChange, onReverbChange, onCPMChange }) {
     
     return (
     <>
@@ -9,9 +9,13 @@ function Controls({ volume, CPM, onVolumeChange, onCPMChange }) {
                     <input type="text" className="form-control" id="cpm_text_input" placeholder="CPM..." aria-describedby="cpm_label" onChange={onCPMChange} value={CPM} />
                 </form>
                 
-        </div>
+            </div>
+
             <label htmlFor="volume_range" className="form-label">Volume: {volume}</label>
             <input type="range" className="form-range" min="0" max="1" step="0.01" id="volume_range" onChange={onVolumeChange} value={volume} />
+
+            <label htmlFor="reverb_range" className="form-label">Reverb: {reverb}</label>
+            <input type="range" className="form-range" min="0" max="1" step="0.01" id="reverb_range" onChange={onReverbChange} value={reverb} />
 
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="s1" />

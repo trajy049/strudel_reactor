@@ -24,7 +24,8 @@ const handleD3Data = (event) => {
 export default function StrudelDemo() {
 
     const [volume, setVolume] = useState(.75);
-    const [songText, setSongText] = useState(stranger_tune)
+    const [reverb, setReverb] = useState(0);
+    const [songText, setSongText] = useState(stranger_tune);
     const [CPM, setCPM] = useState(35);
     const hasRun = useRef(false);
 
@@ -44,6 +45,17 @@ export default function StrudelDemo() {
         setVolume(volumeChange);
 
         let newSound = songText + `\nall(x => x.gain(${volumeChange}))`
+        setSongText(newSound);
+        globalEditor.setCode(newSound);
+        handlePlay();
+    }
+
+    //Reads reverb from slider then sets the reverb
+    const handleReverbChange = (e) => {
+        const reverbChange = parseFloat(e.target.value);
+        setReverb(reverbChange);
+
+        let newSound = songText + `\nall(x => x.room(${reverbChange}))`
         setSongText(newSound);
         globalEditor.setCode(newSound);
         handlePlay();
@@ -139,7 +151,9 @@ return (
                     </div>
                     <div className="col-md-4">
                         <Controls volume={volume}
+                                  reverb={reverb}
                                   onVolumeChange={handleVolumeChange}
+                                  onReverbChange={handleReverbChange}
                                   onCPMChange={handleCPMChange}
                                   CPM={CPM} />  
                     </div>
