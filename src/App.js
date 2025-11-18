@@ -51,10 +51,20 @@ export default function StrudelDemo() {
 
     //Sets CPM to value from the textbox.
     const handleCPMChange = (e) => {
-        const CPMChange = parseFloat(e.target.value);
-        setCPM(CPMChange);
+        const CPMValue = e.target.value;
+        setCPM(CPMValue);
 
-        let newCPM = songText + `\nsetcpm(${CPMChange})`
+        //Stops the function if CPM is undefined
+        if (CPMValue.trim() == "") {
+            return;
+        }
+
+        const CPMChange = parseFloat(CPMValue);
+        if (isNaN(CPMChange)) {
+            return;
+        }
+        //Updates CPM in the editor
+        const newCPM = songText + `\nsetcpm(${CPMChange})`
         setSongText(newCPM);
         globalEditor.setCode(newCPM);
         handlePlay();
@@ -108,13 +118,15 @@ return (
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                        <PreprocessButton defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
+                        <PreprocessButton defaultValue={songText}
+                                          onChange={(e) => setSongText(e.target.value)} />
                     </div>
                     <div className="col-md-4">
                         <nav>
                             <ProcButton/>
                             <br />
-                            <PlayButton onPlay={handlePlay} onStop={handleStop} />
+                            <PlayButton onPlay={handlePlay}
+                                        onStop={handleStop} />
                         </nav>
                         <br/>
                         <JSONSettings />
@@ -126,7 +138,10 @@ return (
                         <div id="output" />
                     </div>
                     <div className="col-md-4">
-                        <Controls volume={volume} onVolumeChange={handleVolumeChange} onCPMChange={handleCPMChange} CPM={CPM} />  
+                        <Controls volume={volume}
+                                  onVolumeChange={handleVolumeChange}
+                                  onCPMChange={handleCPMChange}
+                                  CPM={CPM} />  
                     </div>
                 </div>
             </div>
